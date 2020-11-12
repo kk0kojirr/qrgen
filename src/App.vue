@@ -5,15 +5,15 @@
     <img src="./assets/logo.png">
 
     <form>
-      <div><input id="input" type="text" v-model="url" placeholder="this is test text box"></div>
-      <input type="button" value="good! botton">
+      <div><input id="input" type="text" v-model="url" :placeholder="url"></div>
+      <input type="button" value="Good! botton">
     </form>
-    <qrcode v-bind:value="url" tag="img"></qrcode>
+    <vue-qrcode v-bind:value="url" tag="img"></vue-qrcode>
     <p>url is <a v-bind:href="url">{{ url }}</a></p>
 
-    <h2>this page generate qrcode for ryomo TeamsMeetings!</h2>
+    <h2>this page generate qrcode for RS TeamsMeetings!</h2>
     <h3>usage: imput meeting url. so simple</h3>
-    <p>this page created by VUE, </p>
+    <p>this page created by VUE.js</p>
 
     <div id="spacer"></div>
 
@@ -22,7 +22,11 @@
 </template>
 
 <script>
+import VueQrcode from "@chenfengyuan/vue-qrcode";
 export default {
+  components: {
+    VueQrcode
+  },
   name: "App",
   data() {
     return {
