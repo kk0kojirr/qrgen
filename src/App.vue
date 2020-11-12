@@ -1,5 +1,6 @@
 <template>
   <div>Hello {{ value }}</div>
+  <img src="./assets/logo.png">
 </template>
 
 <script>
