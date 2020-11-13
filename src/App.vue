@@ -33,7 +33,7 @@ export default {
     countup: () => {
       axios.get('./api/counter')
         .then((res) => {
-          this.count = res.count;
+          this.count = JSON.parse(res).count;
         })
         .catch((e) => {
           alert(e);
