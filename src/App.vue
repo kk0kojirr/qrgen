@@ -28,9 +28,9 @@ export default {
     VueQrcode
   },
   name: "App",
-  method: {
+  methods: {
     countup() {
-      this.axios.get('./api/counter')
+      Vue.axios.get('./api/counter')
         .then((res) => {
           this.count = res.count;
         })
