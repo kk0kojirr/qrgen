@@ -6,9 +6,9 @@
 
     <form>
       <div><input id="input" type="text" v-model="url" :placeholder="url"></div>
-      <input @click="coutup" id="button" type="button" value="👍">
+      <input type="button" @click="countup" id="button" value="👍">
     </form>
-    <vue-qrcode v-bind:value="url" tag="img"></vue-qrcode>
+    <vue-qrcode id="qrcode" v-bind:value="url" tag="img"></vue-qrcode>
     <p>url is <a v-bind:href="url">{{ url }}</a></p>
 
     <h2>this page generate qrcode for RS TeamsMeetings!</h2>
@@ -23,14 +23,15 @@
 
 <script>
 import VueQrcode from "@chenfengyuan/vue-qrcode";
+import axios from 'axios'
 export default {
   components: {
     VueQrcode
   },
   name: "App",
   methods: {
-    countup() {
-      this.axios.get('./api/counter')
+    countup: () => {
+      axios.get('./api/counter')
         .then((res) => {
           this.count = res.count;
         })
@@ -74,13 +75,14 @@ main > h1 {
   font-size: 3.5em;
 }
 
-.logo {
-  width: 50%;
+#logo {
+  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
 #input {
-  width: 45%;
+  width: 80%;
   padding: 10px 15px;
   font-size: 18px;
   border-radius: 3px;
