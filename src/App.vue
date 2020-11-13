@@ -17,7 +17,7 @@
 
     <div id="spacer"></div>
 
-    <footer>footer text get wild!</footer>
+    <footer>footer text get wild! {{ count }}</footer>
   </div>
 </template>
 
@@ -33,7 +33,8 @@ export default {
     countup: () => {
       axios.get('./api/counter')
         .then((res) => {
-          this.count = JSON.parse(res).count;
+          console.log(res);
+          this.count = res.data.count;
         })
         .catch((e) => {
           alert(e);
