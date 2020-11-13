@@ -30,7 +30,7 @@ export default {
   name: "App",
   methods: {
     countup() {
-      Vue.axios.get('./api/counter')
+      this.axios.get('./api/counter')
         .then((res) => {
           this.count = res.count;
         })
