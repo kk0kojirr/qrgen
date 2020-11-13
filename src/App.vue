@@ -30,11 +30,10 @@ export default {
   },
   name: "App",
   methods: {
-    countup: () => {
+    countup: function() {
       axios.get('./api/counter')
         .then((res) => {
-          console.log(res.data);
-          this.count = res.data["count"];
+          this.count = res.data.count;
         })
         .catch((e) => {
           alert(e);
