@@ -6,7 +6,7 @@
 
     <form>
       <div><input id="input" type="text" v-model="url" :placeholder="url"></div>
-      <input id="button" type="button" value="👍">
+      <input @click="coutup" id="button" type="button" value="👍">
     </form>
     <vue-qrcode v-bind:value="url" tag="img"></vue-qrcode>
     <p>url is <a v-bind:href="url">{{ url }}</a></p>
@@ -28,11 +28,23 @@ export default {
     VueQrcode
   },
   name: "App",
+  method: {
+    countup() {
+      this.axios.get('./api/counter')
+        .then((res) => {
+          this.count = res.count;
+        })
+        .catch((e) => {
+          alert(e);
+        });
+    }
+  },
   data() {
     return {
       message: "ホームページへようこそ✨",
       value: "get wild",
-      url: "https://www.microsoft.com"
+      url: "https://www.microsoft.com",
+      count: 0
     };
   }
 };
