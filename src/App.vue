@@ -2,11 +2,11 @@
   <div>
     <h1>Generate QRCODE</h1>
     <h1>{{ message }}</h1>
-    <img src="./assets/logo.png">
+    <img id="logo" src="./assets/logo.png">
 
     <form>
       <div><input id="input" type="text" v-model="url" :placeholder="url"></div>
-      <input type="button" value="Good! botton">
+      <input id="button" type="button" value="👍">
     </form>
     <vue-qrcode v-bind:value="url" tag="img"></vue-qrcode>
     <p>url is <a v-bind:href="url">{{ url }}</a></p>
@@ -30,7 +30,7 @@ export default {
   name: "App",
   data() {
     return {
-      message: "ホームページへようこそ！",
+      message: "ホームページへようこそ✨",
       value: "get wild",
       url: "https://www.microsoft.com"
     };
@@ -62,12 +62,30 @@ main > h1 {
   font-size: 3.5em;
 }
 
+.logo {
+  width: 50%;
+  height: auto;
+}
+
 #input {
-    width: 50%;
-    padding: 10px 15px;
-    font-size: 18px;
-    border-radius: 3px;
-    border: 2px solid #ddd;
-    box-sizing: border-box;
+  width: 45%;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 3px;
+  border: 2px solid #ddd;
+  box-sizing: border-box;
+}
+
+#button {
+  width: 100%;
+  max-width: 120px;
+  font-size: 20px;
+  margin: 5px;
+  padding: 15px 10px;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background-color: rgb(117,132,219);
 }
 </style>
