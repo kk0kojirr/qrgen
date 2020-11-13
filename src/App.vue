@@ -76,8 +76,8 @@ main > h1 {
 }
 
 #logo {
-  width: 100%;
-  max-width: 100%;
+  width: 50%;
+  max-width: 50%;
   height: auto;
 }
 
