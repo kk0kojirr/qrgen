@@ -17,7 +17,7 @@
 
     <div id="spacer"></div>
 
-    <footer>footer text get wild! {{ count }}</footer>
+    <footer>get wild! {{ count }}</footer>
   </div>
 </template>
 
