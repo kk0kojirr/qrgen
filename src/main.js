@@ -4,7 +4,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
-s
+
 Vue.use(VueAxios, axios)
 
 new Vue({
