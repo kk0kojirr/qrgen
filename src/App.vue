@@ -33,8 +33,8 @@ export default {
     countup: () => {
       axios.get('./api/counter')
         .then((res) => {
-          console.log(res);
-          this.count = res.data.count;
+          console.log(res.data);
+          this.count = res.data["count"];
         })
         .catch((e) => {
           alert(e);
@@ -46,7 +46,7 @@ export default {
       message: "ホームページへようこそ✨",
       value: "get wild",
       url: "https://www.microsoft.com",
-      count: 0
+      count: ""
     };
   }
 };
