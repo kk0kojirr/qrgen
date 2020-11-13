@@ -9,7 +9,7 @@
         "get",
         "post"
       ],
-      "route": "couter"
+      "route": "counter"
     },
     {
       "type": "http",
