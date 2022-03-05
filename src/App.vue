@@ -1,23 +1,30 @@
 <template>
-  <div>
+  <div class="wrapper">
+    <div id="item1">
     <h1>Generate QRCODE</h1>
     <h1>{{ message }}</h1>
     <img id="logo" src="./assets/logo.png">
+    </div>
 
+    <div id="item2">
     <form>
       <div><input id="input" type="text" v-model="url" :placeholder="url"></div>
-      <input type="button" @click="countup" id="button" value="👍">
     </form>
     <vue-qrcode id="qrcode" v-bind:value="url" tag="img"></vue-qrcode>
     <p>url is <a v-bind:href="url">{{ url }}</a></p>
+    </div>
 
-    <h2>this page generate qrcode for RS TeamsMeetings!</h2>
+    <div id="item3">
+    <h3>this page generate qrcode for RS TeamsMeetings!</h3>
     <h3>usage: imput meeting url. so simple</h3>
     <p>this page created by VUE.js</p>
+    </div>
 
-    <div id="spacer"></div>
+    <div id="item4">
+    <input type="button" @click="countup" id="button" value="👍">
+    get wild! {{ count }}
+    </div>
 
-    <footer>get wild! {{ count }}</footer>
   </div>
 </template>
 
@@ -61,28 +68,40 @@ html, body {
   border: 0;
   padding: 0;
   background-color: rgb(242,242,242);
-  text-align: center;
 }
 
-main {
-  margin: auto;
-  width: 50%;
-  padding: 20px;
+.wrapper {
+  display: grid;
+  grid-template-columns: 30px 450px 30px;
+  grid-template-rows: 280px 200px 180px 100px;
 }
 
-main > h1 {
+#item1 {
+  grid-row: 1 /2;
+  grid-column: 2;
+}
+#item2 {
+  grid-row: 2 /3;
+  grid-column: 2;
   text-align: center;
-  font-size: 3.5em;
+}
+#item3 {
+  grid-row: 3 /4;
+  grid-column: 2;
+}
+#item4 {
+  grid-row: 4 /5;
+  grid-column: 2;
 }
 
 #logo {
-  width: 50%;
-  max-width: 50%;
+  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
 #input {
-  width: 80%;
+  width: 100%;
   padding: 10px 15px;
   font-size: 18px;
   border-radius: 3px;
@@ -92,10 +111,10 @@ main > h1 {
 
 #button {
   width: 100%;
-  max-width: 120px;
-  font-size: 20px;
+  max-width: 70px;
+  font-size: 24px;
   margin: 5px;
-  padding: 15px 10px;
+  padding: 3px 5px;
   display: inline-block;
   text-align: center;
   letter-spacing: 0.1em;
