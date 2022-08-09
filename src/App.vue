@@ -51,7 +51,7 @@ export default {
     return {
       message: "ホームページへようこそ✨",
       value: "get wild",
-      url: "https://www.microsoft.com",
+      url: "https://www.microsoft.com/iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii",
       count: ""
     };
   }
@@ -73,7 +73,7 @@ html, body {
 .wrapper {
   display: grid;
   grid-template-columns: 30px 450px 30px;
-  grid-template-rows: 280px 200px 180px 100px;
+  grid-template-rows: 280px auto 180px 100px;
 }
 
 #item1 {
@@ -104,7 +104,7 @@ html, body {
   width: 100%;
   padding: 10px 15px;
   font-size: 18px;
-  border-radius: 3px;
+  border-radius: 10px;
   border: 2px solid #ddd;
   box-sizing: border-box;
 }
@@ -120,5 +120,6 @@ html, body {
   letter-spacing: 0.1em;
   color: #fff;
   background-color: rgb(117,132,219);
+  border-radius: 0.5rem;
 }
 </style>
